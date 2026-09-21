@@ -112,9 +112,13 @@ body {
 }
 
 .wt-qr {
-    background: #fff;
-    padding: 10px;
-    border-radius: 16px;
+    background: #ffffff;
+    padding: 14px;
+    border-radius: 12px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    max-width: 100%;
+    height: auto;
 }
 
 .wt-qr-url {

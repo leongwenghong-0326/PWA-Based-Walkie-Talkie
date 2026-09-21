@@ -129,8 +129,9 @@ JS;
 
     public function qr(Request $request): void
     {
-        $svg = QrCode::svg($request->publicUrl(), 5, 2);
-        header('Cache-Control: no-store');
-        Response::text($svg, 'image/svg+xml; charset=UTF-8');
+        header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+        header('Pragma: no-cache');
+        // Serve a real PNG (route may still be /qr.svg for compatibility).
+        QrCode::png($request->publicUrl(), 8, 4);
     }
 }

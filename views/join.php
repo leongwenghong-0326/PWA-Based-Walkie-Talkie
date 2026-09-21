@@ -48,7 +48,9 @@
 
                 <section class="wt-card wt-qr-card mt-4 p-4 text-center">
                     <h2 class="h6 text-uppercase mb-3">Open on your phone</h2>
-                    <img class="wt-qr" src="<?= e(url('qr.svg')) ?>" width="180" height="180" alt="QR code for this application">
+                    <img class="wt-qr" src="<?= e(url('qr.svg')) ?>?t=<?= e((string) time()) ?>"
+                         width="220" height="220" alt="QR code for this application"
+                         decoding="sync">
                     <p class="wt-hint mt-3 mb-0">Scan this code to join</p>
                 </section>
             </div>

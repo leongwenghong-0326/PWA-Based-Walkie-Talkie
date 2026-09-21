@@ -1,0 +1,42 @@
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Runtime / private storage
+storage/rooms/*.json
+storage/logs/*.log
+storage/logs/*.txt
+storage/ratelimit/*.json
+!storage/rooms/.gitkeep
+!storage/logs/.gitkeep
+!storage/ratelimit/.gitkeep
+
+# Local tooling / tunnels (may contain machine paths or binaries)
+tools/
+*.exe
+*.log
+
+# Editor / OS junk
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+.idea/
+.vscode/
+*.code-workspace
+
+# Temporary / local-only
+shot-*.php
+*_preview.html
+.tmp/
+temp/
+tmp/
+
+# Composer / caches (if added later)
+/vendor/
+composer.lock
+.phpunit.result.cache
+.php-cs-fixer.cache

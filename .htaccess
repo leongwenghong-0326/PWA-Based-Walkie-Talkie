@@ -1,0 +1,25 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Protect application internals even if rewrite is the only layer.
+    RewriteRule ^(app|config|storage|views|scripts)/ - [F,L]
+    RewriteRule ^\.env$ - [F,L]
+    RewriteRule ^\.git - [F,L]
+
+    # Serve existing files and directories (CSS, JS, icons) as-is.
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Front controller
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+
+<IfModule mod_headers.c>
+    <FilesMatch "sw\.js$">
+        Header set Service-Worker-Allowed "/"
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>
+
+Options -Indexes

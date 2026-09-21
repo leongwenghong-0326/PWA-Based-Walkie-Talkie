@@ -1,6 +1,7 @@
 # Environment / secrets
 .env
 .env.local
+.env.cpanel
 .env.*.local
 
 # Runtime / private storage

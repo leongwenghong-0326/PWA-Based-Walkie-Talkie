@@ -49,6 +49,12 @@ final class Request
         }
 
         $uri = '/' . trim($uri, '/');
+
+        // Direct hits like /index.php must map to the home route "/".
+        if ($uri === '/index.php') {
+            return '/';
+        }
+
         return $uri === '/' ? '/' : rtrim($uri, '/');
     }
 
